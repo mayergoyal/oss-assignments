@@ -1,0 +1,49 @@
+Description: This project implements a basic calculator in C that performs fundamental arithmetic operations: addition, subtraction, multiplication, and division. The calculator operates via a command-line interface.
+Code Structure
+SimpleCalculator/
+│
+├── src/
+│   ├── calculator.c
+│   ├── calculator.h
+│   └── main.c
+│
+├── tests/
+│   └── test_calculator.c
+│
+├── Makefile
+├── README.md
+└── LICENSE
+Functionality and Analysis
+calculator.c
+Purpose: Implements core arithmetic operations.
+
+Functions:
+
+double add(double a, double b)
+
+Description: Adds two numbers.
+Parameters:
+a (double): First number
+b (double): Second number
+Returns: The sum of a and b.
+double subtract(double a, double b)
+
+Description: Subtracts the second number from the first.
+Parameters:
+a (double): Number to subtract from
+b (double): Number to be subtracted
+Returns: The result of a - b.
+double multiply(double a, double b)
+
+Description: Multiplies two numbers.
+Parameters:
+a (double): First number
+b (double): Second number
+Returns: The product of a and b.
+double divide(double a, double b)
+
+Description: Divides the first number by the second. Handles division by zero.
+Parameters:
+a (double): Numerator
+b (double): Denominator
+Returns: The result of a / b. Returns 0.0 if b is zero.
