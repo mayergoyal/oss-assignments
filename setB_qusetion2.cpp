@@ -15,6 +15,8 @@ if (n==2) {
     return 0;
 }
 vector<int>ans;
+ans.push_back(1);
+ans.push_back(2);
 for(int i=3;i<n;i++)
 if(isprime(i)){
     ans.push_back(i);
