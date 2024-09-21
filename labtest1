@@ -1,0 +1,58 @@
+import numpy as np
+import matplotlib.pyplot as plt
+n=int(input("enter no. of employees "))
+
+emp_sal=[]
+emp_des=[]
+emp_perrating=[]
+for i in range(n):
+    
+    sal=int(input("enter salary "))
+    emp_sal.append(sal)
+    des=input("enter designation")
+    emp_des.append(des)
+    rat=int(input("enter rating of employeee "))
+    emp_perrating.append(rat)
+emp=np.arange(1,n+1)
+emp_sal=np.array(emp_sal)
+#emp_des=np.array(emp_des)
+emp_des=np.array(emp_des)
+#emp_perrating=np.array(emp_perrating)
+print(" Here is the list of employee codes")
+print(emp)
+print(" AS HR , NOW MARK ATTENDANCE OF THE EMPLOYEES , 0 for absent and 1 for present")
+attendance=[]
+for i in range (n):
+    m=int(input("enter  "))
+    if(m):
+        attendance.append("present")
+    else:
+        attendance.append("absent")
+print(" now attendance is as ", attendance)
+    
+
+ind=int(input("for changing the performance . tell the id of employee that need to be changed "))
+amt=int(input("enter what to change"))
+emp_perrating[ind-1]=amt;
+print("updated rating is ",emp_perrating)
+emp_perrating=np.array(emp_perrating)
+total=np.sum(emp_sal)
+avgsal=np.mean(emp_sal)
+minsal=np.min(emp_sal)
+maxsal=np.max(emp_sal)
+print("average salary is ", avgsal, " minimum salary is ",minsal," maximum salry is ",maxsal)
+highemp=0
+lowemp=0
+count=1;
+for i in emp_sal:
+    if(i==maxsal):
+        highemp=count
+    if(i==minsal):
+        lowemp=count
+    count=count+1
+print("highest paying employee is ",highemp," lowest paying employee is ",lowemp)
+plt.scatter(emp,emp_perrating,color="red")
+plt.title("employee performance")
+plt.xlabel("employees")
+plt.ylabel("performances")
+plt.show()
